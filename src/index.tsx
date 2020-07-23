@@ -66,7 +66,7 @@ const EXCHANGE_RATES = gql`
 const ExchangeRates: React.FunctionComponent<any> = () => {
   const { loading, error, data } = useQuery(EXCHANGE_RATES);
 
-  const hasData = !!data && data.rates;
+  const hasData = !!data;
 
   // 🤔 for some reason data exists but `loading` is true when we perform `renderToString`
   // after `getDataFromTree`?

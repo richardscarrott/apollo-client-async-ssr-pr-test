@@ -90,7 +90,7 @@ app.listen(6060, function () {
 var EXCHANGE_RATES = client_1.gql(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  query GetExchangeRates {\n    rates(currency: \"USD\") {\n      currency\n      rate\n    }\n  }\n"], ["\n  query GetExchangeRates {\n    rates(currency: \"USD\") {\n      currency\n      rate\n    }\n  }\n"])));
 var ExchangeRates = function () {
     var _a = client_1.useQuery(EXCHANGE_RATES), loading = _a.loading, error = _a.error, data = _a.data;
-    var hasData = !!data && data.rates;
+    var hasData = !!data;
     // 🤔 for some reason data exists but `loading` is true when we perform `renderToString`
     // after `getDataFromTree`?
     if (loading)
